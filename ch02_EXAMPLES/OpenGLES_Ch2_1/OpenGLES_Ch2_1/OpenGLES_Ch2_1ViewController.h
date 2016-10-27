@@ -5,8 +5,8 @@
 
 #import <GLKit/GLKit.h>
 
-@interface OpenGLES_Ch2_1ViewController : GLKViewController
-{
+@interface OpenGLES_Ch2_1ViewController : GLKViewController {
+
    GLuint vertexBufferID;
 }
 

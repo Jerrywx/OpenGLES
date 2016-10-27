@@ -29,8 +29,7 @@ static const SceneVertex vertices[] =
 /////////////////////////////////////////////////////////////////
 // Called when the view controller's view is loaded
 // Perform initialization before the view is asked to draw
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
    [super viewDidLoad];
    
    // Verify the type of view created automatically by the

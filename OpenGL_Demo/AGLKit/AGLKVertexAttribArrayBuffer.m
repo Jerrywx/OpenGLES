@@ -39,12 +39,12 @@
    if(nil != (self = [super init])) {
       	stride = aStride;
       	bufferSizeBytes = stride * count;
-	   
-	   	// STEP 1
+
+	   	/// 创建缓存对象并且返回缓存对象的标示符
       	glGenBuffers(1, &name);
-	   	// STEP 2
+	   	/// 将缓存对象绑定到相应的缓存上。
       	glBindBuffer(GL_ARRAY_BUFFER, self.name);
-	   	// STEP 3
+	   	/// 把顶点数据从cpu内存复制到gpu内存
       	glBufferData(
          	GL_ARRAY_BUFFER,  // Initialize buffer contents
          	bufferSizeBytes,  // Number of bytes to copy
@@ -66,14 +66,14 @@
    	NSParameterAssert(0 < aStride);
    	NSParameterAssert(0 < count);
    	NSParameterAssert(NULL != dataPtr);
-   	NSAssert(0 != name, @"Invalid name");
+	NSAssert(0 != name, @"Invalid name");
 
-   self.stride 			= aStride;
-   self.bufferSizeBytes = aStride * count;
+   	self.stride 			= aStride;
+   	self.bufferSizeBytes = aStride * count;
 	
-	// STEP 2
+	/// 将缓存对象绑定到相应的缓存上。
 	glBindBuffer(GL_ARRAY_BUFFER, self.name);
-	// STEP 3
+	/// 把顶点数据从cpu内存复制到gpu内存
    	glBufferData(
       		GL_ARRAY_BUFFER,  // Initialize buffer contents
       		bufferSizeBytes,  // Number of bytes to copy
@@ -96,15 +96,17 @@
 	NSParameterAssert(offset < self.stride);
    	NSAssert(0 != name, @"Invalid name");
 
-	// STEP 2
+	/// 将缓存对象绑定到相应的缓存上。
    	glBindBuffer(GL_ARRAY_BUFFER, self.name);
 
    	if(shouldEnable) {
-	   // Step 4
+		/// 启用顶点属性，OpenGL是个状态机，我们通常见到的
+		/// glEnable - glDisable函数就是通知OpenGL开启/关闭某种状态的，
+		/// 譬如光照、深度检测等等(我的理解是相当于声明一个buffer)
       	glEnableVertexAttribArray(index);
    	}
 
-	// Step 5
+	/// 设置合适的格式从buffer里面读取数据
    	glVertexAttribPointer(
 						  index,               // Identifies the attribute to use
 						  count,               // number of coordinates for attribute
@@ -135,8 +137,8 @@
 	
    NSAssert(self.bufferSizeBytes >= ((first + count) * self.stride),
       						@"Attempt to draw more vertex data than available.");
-
-   glDrawArrays(mode, first, count); // Step 6
+	/// 绘制
+   	glDrawArrays(mode, first, count); // Step 6
 }
 
 

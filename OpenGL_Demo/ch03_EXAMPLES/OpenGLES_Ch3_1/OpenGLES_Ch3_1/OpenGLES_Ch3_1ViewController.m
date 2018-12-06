@@ -69,24 +69,23 @@ static const SceneVertex vertices[] =
       0.0f, // Blue 
       1.0f);// Alpha 
    
-   // Create vertex buffer containing vertices to draw
-   self.vertexBuffer = [[AGLKVertexAttribArrayBuffer alloc]
-      initWithAttribStride:sizeof(SceneVertex)
-      numberOfVertices:sizeof(vertices) / sizeof(SceneVertex)
-      bytes:vertices
-      usage:GL_STATIC_DRAW];
+   	// Create vertex buffer containing vertices to draw
+   	self.vertexBuffer = [[AGLKVertexAttribArrayBuffer alloc]
+						 				initWithAttribStride:sizeof(SceneVertex)
+						 					numberOfVertices:sizeof(vertices) / sizeof(SceneVertex)
+													   bytes:vertices
+													   usage:GL_STATIC_DRAW];
    
-   // Setup texture
-   CGImageRef imageRef = 
-      [[UIImage imageNamed:@"leaves.gif"] CGImage];
+	/// 读取图片
+   	CGImageRef imageRef = [[UIImage imageNamed:@"leaves.gif"] CGImage];
       
-   GLKTextureInfo *textureInfo = [GLKTextureLoader 
-      textureWithCGImage:imageRef 
-      options:nil 
-      error:NULL];
-   
-   self.baseEffect.texture2d0.name = textureInfo.name;
-   self.baseEffect.texture2d0.target = textureInfo.target;
+   	GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithCGImage:imageRef
+															   options:nil
+																 error:NULL];
+	
+	/// 设置纹理
+   	self.baseEffect.texture2d0.name = textureInfo.name;
+   	self.baseEffect.texture2d0.target = textureInfo.target;
 }
 
 

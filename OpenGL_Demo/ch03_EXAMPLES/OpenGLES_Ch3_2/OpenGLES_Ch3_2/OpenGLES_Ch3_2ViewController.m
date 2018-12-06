@@ -34,20 +34,18 @@ static const SceneVertex vertices[] =
 /////////////////////////////////////////////////////////////////
 // Called when the view controller's view is loaded
 // Perform initialization before the view is asked to draw
-- (void)viewDidLoad
-{
+///
+- (void)viewDidLoad {
    [super viewDidLoad];
    
    // Verify the type of view created automatically by the
    // Interface Builder storyboard
    GLKView *view = (GLKView *)self.view;
-   NSAssert([view isKindOfClass:[GLKView class]],
-      @"View controller's view is not a GLKView");
+   NSAssert([view isKindOfClass:[GLKView class]], @"View controller's view is not a GLKView");
    
    // Create an OpenGL ES 2.0 context and provide it to the
    // view
-   view.context = [[AGLKContext alloc] 
-      initWithAPI:kEAGLRenderingAPIOpenGLES2];
+   view.context = [[AGLKContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
    
    // Make the new context current
    [AGLKContext setCurrentContext:view.context];
@@ -72,21 +70,19 @@ static const SceneVertex vertices[] =
    
    // Create vertex buffer containing vertices to draw
    self.vertexBuffer = [[AGLKVertexAttribArrayBuffer alloc]
-      initWithAttribStride:sizeof(SceneVertex)
-      numberOfVertices:sizeof(vertices) / sizeof(SceneVertex)
-      bytes:vertices
-      usage:GL_STATIC_DRAW];
-   
-   // Setup texture
-   CGImageRef imageRef = 
-      [[UIImage imageNamed:@"leaves.gif"] CGImage];
+						initWithAttribStride:sizeof(SceneVertex)
+							numberOfVertices:sizeof(vertices) / sizeof(SceneVertex)
+										bytes:vertices
+										usage:GL_STATIC_DRAW];
+	
+	/// 读取文件
+   	CGImageRef imageRef = [[UIImage imageNamed:@"leaves.gif"] CGImage];
       
-   AGLKTextureInfo *textureInfo = [AGLKTextureLoader 
-      textureWithCGImage:imageRef 
-      options:nil 
-      error:NULL];
+   	AGLKTextureInfo *textureInfo = [AGLKTextureLoader textureWithCGImage:imageRef
+																 options:nil
+																   error:NULL];
    
-   self.baseEffect.texture2d0.name = textureInfo.name;
+   self.baseEffect.texture2d0.name 	 = textureInfo.name;
    self.baseEffect.texture2d0.target = textureInfo.target;
 }
 

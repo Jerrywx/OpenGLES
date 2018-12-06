@@ -8,8 +8,7 @@
 /////////////////////////////////////////////////////////////////
 // This data type is used specify power of 2 values.  OpenGL ES 
 // best supports texture images that have power of 2 dimensions.
-typedef enum
-{
+typedef enum {
    AGLK1 = 1,
    AGLK2 = 2,
    AGLK4 = 4,
@@ -27,24 +26,24 @@ AGLKPowerOf2;
 
 /////////////////////////////////////////////////////////////////
 // Forward declaration of function
-static AGLKPowerOf2 AGLKCalculatePowerOf2ForDimension(
-   GLuint dimension);
+static AGLKPowerOf2 AGLKCalculatePowerOf2ForDimension(GLuint dimension);
 
 /////////////////////////////////////////////////////////////////
 // Forward declaration of function
+///
 static NSData *AGLKDataWithResizedCGImageBytes(
-   CGImageRef cgImage,
-   size_t *widthPtr,
-   size_t *heightPtr);
+											   CGImageRef cgImage,
+											   size_t *widthPtr,
+											   size_t *heightPtr);
                               
 /////////////////////////////////////////////////////////////////
 // Instances of AGLKTextureInfo are immutable once initialized
 @interface AGLKTextureInfo (AGLKTextureLoader)
 
 - (id)initWithName:(GLuint)aName
-   target:(GLenum)aTarget
-   width:(GLuint)aWidth
-   height:(GLuint)aHeight;
+			target:(GLenum)aTarget
+			 width:(GLuint)aWidth
+			height:(GLuint)aHeight;
    
 @end
 
@@ -54,18 +53,16 @@ static NSData *AGLKDataWithResizedCGImageBytes(
 /////////////////////////////////////////////////////////////////
 // This method is the designated initializer.
 - (id)initWithName:(GLuint)aName
-   target:(GLenum)aTarget
-   width:(GLuint)aWidth
-   height:(GLuint)aHeight
-{
-    if (nil != (self = [super init])) 
-    {
+				target:(GLenum)aTarget
+			 width:(GLuint)aWidth
+				height:(GLuint)aHeight {
+	
+    if (nil != (self = [super init])) {
         name = aName;
         target = aTarget;
         width = aWidth;
         height = aHeight;
     }
-    
     return self;
 }
 
@@ -82,6 +79,8 @@ static NSData *AGLKDataWithResizedCGImageBytes(
 @end
 
 
+
+#pragma mark - AGLKTextureLoader
 @implementation AGLKTextureLoader
 
 /////////////////////////////////////////////////////////////////
@@ -93,26 +92,30 @@ static NSData *AGLKDataWithResizedCGImageBytes(
 //    The generated texture buffer has power of 2 dimensions. The
 // provided image data is scaled (re-sampled) by Core Graphics as
 // necessary to fit within the generated texture buffer.
-+ (AGLKTextureInfo *)textureWithCGImage:(CGImageRef)cgImage                           options:(NSDictionary *)options
-   error:(NSError **)outError; 
-{
+///
++ (AGLKTextureInfo *)textureWithCGImage:(CGImageRef)cgImage
+								options:(NSDictionary *)options
+								  error:(NSError **)outError {
+
    // Get the bytes to be used when copying data into new texture
    // buffer
    size_t width;
    size_t height;
    NSData *imageData = AGLKDataWithResizedCGImageBytes(
-      cgImage,
-      &width,
-      &height);
+													   cgImage,
+													   &width,
+													   &height);
    
    // Generation, bind, and copy data into a new texture buffer
    GLuint      textureBufferID;
-   
-   glGenTextures(1, &textureBufferID);                  // Step 1
-   glBindTexture(GL_TEXTURE_2D, textureBufferID);       // Step 2
-   
-   glTexImage2D(                                        // Step 3
-      GL_TEXTURE_2D, 
+	
+	/// 生成纹理缓存标识符
+	glGenTextures(1, &textureBufferID);
+	/// 将纹理标识符 绑定到上下文
+   	glBindTexture(GL_TEXTURE_2D, textureBufferID);       // Step 2
+   	/// 复制图像数据来初始化纹理缓存的内容
+   	glTexImage2D(                                        // Step 3
+      GL_TEXTURE_2D,
       0, 
       GL_RGBA, 
       (GLuint)width,
@@ -125,17 +128,16 @@ static NSData *AGLKDataWithResizedCGImageBytes(
    // Set parameters that control texture sampling for the bound
    // texture
   glTexParameteri(GL_TEXTURE_2D, 
-     GL_TEXTURE_MIN_FILTER, 
-     GL_LINEAR); 
+				  GL_TEXTURE_MIN_FILTER,
+				  GL_LINEAR);
    
    // Allocate and initialize the AGLKTextureInfo instance to be
    // returned
-   AGLKTextureInfo *result = [[AGLKTextureInfo alloc] 
-      initWithName:textureBufferID
-      target:GL_TEXTURE_2D
-      width:(GLuint)width
-      height:(GLuint)height];
-   
+   AGLKTextureInfo *result = [[AGLKTextureInfo alloc] initWithName:textureBufferID
+															target:GL_TEXTURE_2D
+															 width:(GLuint)width
+															height:(GLuint)height];
+
    return result;
 }
                                  
@@ -150,10 +152,9 @@ static NSData *AGLKDataWithResizedCGImageBytes(
 // with the bytes in the returned NSData instance. The widthPtr 
 // and heightPtr arguments must be valid pointers.
 static NSData *AGLKDataWithResizedCGImageBytes(
-   CGImageRef cgImage,
-   size_t *widthPtr,
-   size_t *heightPtr)
-{
+											   CGImageRef cgImage,
+											   size_t *widthPtr,
+											   size_t *heightPtr) {
    NSCParameterAssert(NULL != cgImage);
    NSCParameterAssert(NULL != widthPtr);
    NSCParameterAssert(NULL != heightPtr);
@@ -166,10 +167,8 @@ static NSData *AGLKDataWithResizedCGImageBytes(
    
    // Calculate the width and height of the new texture buffer
    // The new texture buffer will have power of 2 dimensions.
-   GLuint width = AGLKCalculatePowerOf2ForDimension(
-      originalWidth);
-   GLuint height = AGLKCalculatePowerOf2ForDimension(
-      originalHeight);
+   GLuint width = AGLKCalculatePowerOf2ForDimension(originalWidth);
+   GLuint height = AGLKCalculatePowerOf2ForDimension(originalHeight);
       
    // Allocate sufficient storage for RGBA pixel color data with 
    // the power of 2 sizes specified
@@ -183,9 +182,9 @@ static NSData *AGLKDataWithResizedCGImageBytes(
    // allocated bytes
    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
    CGContextRef cgContext = CGBitmapContextCreate( 
-      [imageData mutableBytes], width, height, 8, 
-      4 * width, colorSpace, 
-      kCGImageAlphaPremultipliedLast);
+												  [imageData mutableBytes], width, height, 8,
+												  4 * width, colorSpace,
+												  kCGImageAlphaPremultipliedLast);
    CGColorSpaceRelease(colorSpace);
    
    // Flip the Core Graphics Y-axis for future drawing
@@ -194,8 +193,7 @@ static NSData *AGLKDataWithResizedCGImageBytes(
    
    // Draw the loaded image into the Core Graphics context 
    // resizing as necessary
-   CGContextDrawImage(cgContext, CGRectMake(0, 0, width, height),
-      cgImage);
+   CGContextDrawImage(cgContext, CGRectMake(0, 0, width, height), cgImage);
    
    CGContextRelease(cgContext);
    
@@ -210,9 +208,7 @@ static NSData *AGLKDataWithResizedCGImageBytes(
 // This function calculates and returns the nearest power of 2 
 // that is greater than or equal to the dimension argument and 
 // less than or equal to 1024.
-static AGLKPowerOf2 AGLKCalculatePowerOf2ForDimension(
-   GLuint dimension)
-{
+static AGLKPowerOf2 AGLKCalculatePowerOf2ForDimension(GLuint dimension) {
    AGLKPowerOf2  result = AGLK1;
    
    if(dimension > (GLuint)AGLK512)
@@ -255,6 +251,6 @@ static AGLKPowerOf2 AGLKCalculatePowerOf2ForDimension(
    {
       result = AGLK2;
    }
-   
+	NSLog(@"=================================== %d", result);
    return result;
 }

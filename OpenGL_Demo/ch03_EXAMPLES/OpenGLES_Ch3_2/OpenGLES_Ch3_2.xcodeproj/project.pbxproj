@@ -58,6 +58,9 @@
 		03EC715C1641DB7100CAB35A /* OpenGL_ES_for_iOS_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_57x57.png; path = ../../../Resources/OpenGL_ES_for_iOS_57x57.png; sourceTree = "<group>"; };
 		03EC715D1641DB7100CAB35A /* OpenGL_ES_for_iOS_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_72x72.png; path = ../../../Resources/OpenGL_ES_for_iOS_72x72.png; sourceTree = "<group>"; };
 		03EC715E1641DB7100CAB35A /* OpenGL_ES_for_iOS_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_114x114.png; path = ../../../Resources/OpenGL_ES_for_iOS_114x114.png; sourceTree = "<group>"; };
+		341850AE21B8C3BB00ABB9BB /* help_BaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = help_BaseEffect.h; sourceTree = "<group>"; };
+		341850AF21B8C3BB00ABB9BB /* help_Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = help_Context.h; sourceTree = "<group>"; };
+		341850B021B8C3BB00ABB9BB /* help_TextureInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = help_TextureInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,7 @@
 		0345CD8313F05ABA0089B01C /* OpenGLES_Ch3_2 */ = {
 			isa = PBXGroup;
 			children = (
+				341850AD21B8C3BB00ABB9BB /* help */,
 				03E2642A1529E5DC00012BF2 /* AGLKContext.h */,
 				03E2642B1529E5DC00012BF2 /* AGLKContext.m */,
 				03E2642C1529E5DC00012BF2 /* AGLKTextureLoader.h */,
@@ -118,8 +122,6 @@
 				03E2642F1529E5DC00012BF2 /* AGLKVertexAttribArrayBuffer.m */,
 				0345CD8C13F05ABA0089B01C /* OpenGLES_Ch3_2AppDelegate.h */,
 				0345CD8D13F05ABA0089B01C /* OpenGLES_Ch3_2AppDelegate.m */,
-				0345CD8F13F05ABA0089B01C /* MainStoryboard_iPhone.storyboard */,
-				0345CD9213F05ABA0089B01C /* MainStoryboard_iPad.storyboard */,
 				0345CD9513F05ABA0089B01C /* OpenGLES_Ch3_2ViewController.h */,
 				0345CD9613F05ABA0089B01C /* OpenGLES_Ch3_2ViewController.m */,
 				0345CD8413F05ABA0089B01C /* Supporting Files */,
@@ -130,6 +132,8 @@
 		0345CD8413F05ABA0089B01C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0345CD8F13F05ABA0089B01C /* MainStoryboard_iPhone.storyboard */,
+				0345CD9213F05ABA0089B01C /* MainStoryboard_iPad.storyboard */,
 				03EC715B1641DB7100CAB35A /* Default-568h@2x.png */,
 				03EC715C1641DB7100CAB35A /* OpenGL_ES_for_iOS_57x57.png */,
 				03EC715D1641DB7100CAB35A /* OpenGL_ES_for_iOS_72x72.png */,
@@ -141,6 +145,16 @@
 				0345CD8B13F05ABA0089B01C /* OpenGLES_Ch3_2-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		341850AD21B8C3BB00ABB9BB /* help */ = {
+			isa = PBXGroup;
+			children = (
+				341850AE21B8C3BB00ABB9BB /* help_BaseEffect.h */,
+				341850AF21B8C3BB00ABB9BB /* help_Context.h */,
+				341850B021B8C3BB00ABB9BB /* help_TextureInfo.h */,
+			);
+			path = help;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +340,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenGLES_Ch3_2/OpenGLES_Ch3_2-Prefix.pch";
 				INFOPLIST_FILE = "OpenGLES_Ch3_2/OpenGLES_Ch3_2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -337,6 +352,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenGLES_Ch3_2/OpenGLES_Ch3_2-Prefix.pch";
 				INFOPLIST_FILE = "OpenGLES_Ch3_2/OpenGLES_Ch3_2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -55,6 +55,7 @@
 		03EC714F1641DB5400CAB35A /* OpenGL_ES_for_iOS_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_57x57.png; path = ../../../Resources/OpenGL_ES_for_iOS_57x57.png; sourceTree = "<group>"; };
 		03EC71501641DB5400CAB35A /* OpenGL_ES_for_iOS_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_72x72.png; path = ../../../Resources/OpenGL_ES_for_iOS_72x72.png; sourceTree = "<group>"; };
 		03EC71511641DB5400CAB35A /* OpenGL_ES_for_iOS_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_114x114.png; path = ../../../Resources/OpenGL_ES_for_iOS_114x114.png; sourceTree = "<group>"; };
+		341850A921B8B53300ABB9BB /* help_BaseEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = help_BaseEffect.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +114,9 @@
 				03E2641D15295A9600012BF2 /* AGLKVertexAttribArrayBuffer.m */,
 				039224D513E7187E00053DB2 /* OpenGLES_Ch3_1AppDelegate.h */,
 				039224D613E7187E00053DB2 /* OpenGLES_Ch3_1AppDelegate.m */,
-				039224D813E7187E00053DB2 /* MainStoryboard_iPhone.storyboard */,
-				039224DB13E7187E00053DB2 /* MainStoryboard_iPad.storyboard */,
 				039224DE13E7187E00053DB2 /* OpenGLES_Ch3_1ViewController.h */,
 				039224DF13E7187E00053DB2 /* OpenGLES_Ch3_1ViewController.m */,
+				341850A921B8B53300ABB9BB /* help_BaseEffect.h */,
 				039224CD13E7187E00053DB2 /* Supporting Files */,
 			);
 			path = OpenGLES_Ch3_1;
@@ -125,6 +125,8 @@
 		039224CD13E7187E00053DB2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				039224D813E7187E00053DB2 /* MainStoryboard_iPhone.storyboard */,
+				039224DB13E7187E00053DB2 /* MainStoryboard_iPad.storyboard */,
 				03EC714E1641DB5400CAB35A /* Default-568h@2x.png */,
 				03EC714F1641DB5400CAB35A /* OpenGL_ES_for_iOS_57x57.png */,
 				03EC71501641DB5400CAB35A /* OpenGL_ES_for_iOS_72x72.png */,
@@ -320,6 +322,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenGLES_Ch3_1/OpenGLES_Ch3_1-Prefix.pch";
 				INFOPLIST_FILE = "OpenGLES_Ch3_1/OpenGLES_Ch3_1-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -331,6 +334,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenGLES_Ch3_1/OpenGLES_Ch3_1-Prefix.pch";
 				INFOPLIST_FILE = "OpenGLES_Ch3_1/OpenGLES_Ch3_1-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

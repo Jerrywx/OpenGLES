@@ -95,27 +95,28 @@ static const SceneVertex vertices[] =
 // whenever Cocoa Touch asks the view controller's view to
 // draw itself. (In this case, render into a frame buffer that
 // shares memory with a Core Animation Layer)
-- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
-{
+///
+- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
    [self.baseEffect prepareToDraw];
    
    // Clear back frame buffer (erase previous drawing)
    [(AGLKContext *)view.context clear:GL_COLOR_BUFFER_BIT];
    
    [self.vertexBuffer prepareToDrawWithAttrib:GLKVertexAttribPosition
-      numberOfCoordinates:3
-      attribOffset:offsetof(SceneVertex, positionCoords)
-      shouldEnable:YES];
+						  numberOfCoordinates:3
+								 attribOffset:offsetof(SceneVertex, positionCoords)
+								 shouldEnable:YES];
+	
    [self.vertexBuffer prepareToDrawWithAttrib:GLKVertexAttribTexCoord0
-      numberOfCoordinates:2
-      attribOffset:offsetof(SceneVertex, textureCoords)
-      shouldEnable:YES];
+						  numberOfCoordinates:2
+								 attribOffset:offsetof(SceneVertex, textureCoords)
+								 shouldEnable:YES];
       
    // Draw triangles using the first three vertices in the 
    // currently bound vertex buffer
    [self.vertexBuffer drawArrayWithMode:GL_TRIANGLES
-      startVertexIndex:0
-      numberOfVertices:3];
+					   startVertexIndex:0
+					   numberOfVertices:3];
 }
 
 
@@ -123,8 +124,8 @@ static const SceneVertex vertices[] =
 // Called when the view controller's view has been unloaded
 // Perform clean-up that is possible when you know the view 
 // controller's view won't be asked to draw again soon.
-- (void)viewDidUnload
-{
+///
+- (void)viewDidUnload {
    [super viewDidUnload];
    
    // Make the view's context current

@@ -46,15 +46,17 @@ static const SceneVertex vertices[] =
 	NSAssert([view isKindOfClass:[GLKView class]],
 			 @"View controller's view is not a GLKView");
 
-	/// 4.
+	/// 4. 设置 OPenGL ES API 版本
 	view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
 	
-	// Make the new context current
+	/// 5. 设置当前上下文
+	/// 一个应用可以使用多个上下文。 EAGLContext +setCurrentContext: 方法会为接下来的 OpenGL ES 运算设置将会用到的上下文。
 	[EAGLContext setCurrentContext:view.context];
 	
 	// Create a base effect that provides standard OpenGL ES 2.0
 	// Shading Language programs and set constants to be used for
 	// all subsequent rendering
+	///
 	self.baseEffect = [[GLKBaseEffect alloc] init];
 	self.baseEffect.useConstantColor = GL_TRUE;
 	self.baseEffect.constantColor = GLKVector4Make(
@@ -64,14 +66,18 @@ static const SceneVertex vertices[] =
 												   1.0f);// Alpha
 	
 	// Set the background color stored in the current context
+	/// glClearColor() 函数设置当前OpenGL ES 的上下文的 清除颜色。
 	glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // background color
 	
 	// Generate, bind, and initialize contents of a buffer to be
 	// stored in GPU memory
 	// STEP 1
+	/// 为缓存生成一个独一无二的标识符
 	glGenBuffers(1, &vertexBufferID);
+	/// 为接下来的运算绑定缓存
 	glBindBuffer(GL_ARRAY_BUFFER,  // STEP 2
 				 vertexBufferID);
+	/// 复制数据到缓存中
 	glBufferData(                  // STEP 3
 				 GL_ARRAY_BUFFER,  // Initialize buffer contents
 				 sizeof(vertices), // Number of bytes to copy

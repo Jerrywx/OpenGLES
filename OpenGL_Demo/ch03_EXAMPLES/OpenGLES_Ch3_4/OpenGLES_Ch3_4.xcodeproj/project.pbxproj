@@ -55,6 +55,11 @@
 		03EC71761641DBA000CAB35A /* OpenGL_ES_for_iOS_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_57x57.png; path = ../../../Resources/OpenGL_ES_for_iOS_57x57.png; sourceTree = "<group>"; };
 		03EC71771641DBA000CAB35A /* OpenGL_ES_for_iOS_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_72x72.png; path = ../../../Resources/OpenGL_ES_for_iOS_72x72.png; sourceTree = "<group>"; };
 		03EC71781641DBA000CAB35A /* OpenGL_ES_for_iOS_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_114x114.png; path = ../../../Resources/OpenGL_ES_for_iOS_114x114.png; sourceTree = "<group>"; };
+		303C40B721BEAB24009A3A11 /* help_Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = help_Context.h; sourceTree = "<group>"; };
+		303C40B821BEAB24009A3A11 /* help_BaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = help_BaseEffect.h; sourceTree = "<group>"; };
+		303C40B921BEAB24009A3A11 /* help_TextureInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = help_TextureInfo.h; sourceTree = "<group>"; };
+		303C40BA21BEAECA009A3A11 /* help_gl2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = help_gl2.h; sourceTree = "<group>"; };
+		303C40BB21BEB461009A3A11 /* help_gl3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = help_gl3.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,14 +110,13 @@
 		03D5C1E213F18C4E0072F56B /* OpenGLES_Ch3_4 */ = {
 			isa = PBXGroup;
 			children = (
+				303C40B621BEAB24009A3A11 /* help */,
 				03E264431529E6BE00012BF2 /* AGLKContext.h */,
 				03E264441529E6BE00012BF2 /* AGLKContext.m */,
 				03E264451529E6BE00012BF2 /* AGLKVertexAttribArrayBuffer.h */,
 				03E264461529E6BE00012BF2 /* AGLKVertexAttribArrayBuffer.m */,
 				03D5C1EB13F18C4E0072F56B /* OpenGLES_Ch3_4AppDelegate.h */,
 				03D5C1EC13F18C4E0072F56B /* OpenGLES_Ch3_4AppDelegate.m */,
-				03D5C1EE13F18C4F0072F56B /* MainStoryboard_iPhone.storyboard */,
-				03D5C1F113F18C4F0072F56B /* MainStoryboard_iPad.storyboard */,
 				03D5C1F413F18C4F0072F56B /* OpenGLES_Ch3_4ViewController.h */,
 				03D5C1F513F18C4F0072F56B /* OpenGLES_Ch3_4ViewController.m */,
 				03D5C1E313F18C4E0072F56B /* Supporting Files */,
@@ -123,6 +127,8 @@
 		03D5C1E313F18C4E0072F56B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03D5C1EE13F18C4F0072F56B /* MainStoryboard_iPhone.storyboard */,
+				03D5C1F113F18C4F0072F56B /* MainStoryboard_iPad.storyboard */,
 				03B674001641E1B30070309F /* beetle.png */,
 				03B674011641E1B30070309F /* leaves.gif */,
 				03EC71751641DBA000CAB35A /* Default-568h@2x.png */,
@@ -135,6 +141,19 @@
 				03D5C1EA13F18C4E0072F56B /* OpenGLES_Ch3_4-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		303C40B621BEAB24009A3A11 /* help */ = {
+			isa = PBXGroup;
+			children = (
+				303C40B721BEAB24009A3A11 /* help_Context.h */,
+				303C40B821BEAB24009A3A11 /* help_BaseEffect.h */,
+				303C40B921BEAB24009A3A11 /* help_TextureInfo.h */,
+				303C40BA21BEAECA009A3A11 /* help_gl2.h */,
+				303C40BB21BEB461009A3A11 /* help_gl3.h */,
+			);
+			name = help;
+			path = ../../../AGLKit/help;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +339,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenGLES_Ch3_4/OpenGLES_Ch3_4-Prefix.pch";
 				INFOPLIST_FILE = "OpenGLES_Ch3_4/OpenGLES_Ch3_4-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -331,6 +351,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenGLES_Ch3_4/OpenGLES_Ch3_4-Prefix.pch";
 				INFOPLIST_FILE = "OpenGLES_Ch3_4/OpenGLES_Ch3_4-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

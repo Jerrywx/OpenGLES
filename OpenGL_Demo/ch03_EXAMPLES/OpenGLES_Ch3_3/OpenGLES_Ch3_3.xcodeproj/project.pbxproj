@@ -53,6 +53,9 @@
 		03EC71691641DB8900CAB35A /* OpenGL_ES_for_iOS_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_57x57.png; path = ../../../Resources/OpenGL_ES_for_iOS_57x57.png; sourceTree = "<group>"; };
 		03EC716A1641DB8900CAB35A /* OpenGL_ES_for_iOS_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_72x72.png; path = ../../../Resources/OpenGL_ES_for_iOS_72x72.png; sourceTree = "<group>"; };
 		03EC716B1641DB8900CAB35A /* OpenGL_ES_for_iOS_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_114x114.png; path = ../../../Resources/OpenGL_ES_for_iOS_114x114.png; sourceTree = "<group>"; };
+		304EC50D21BC0CC000A6AD13 /* help_Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = help_Context.h; sourceTree = "<group>"; };
+		304EC50E21BC0CC000A6AD13 /* help_BaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = help_BaseEffect.h; sourceTree = "<group>"; };
+		304EC50F21BC0CC000A6AD13 /* help_TextureInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = help_TextureInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,7 @@
 		03AF4F4413F0D90D00639415 /* OpenGLES_Ch3_3 */ = {
 			isa = PBXGroup;
 			children = (
+				304EC50C21BC0CC000A6AD13 /* help */,
 				03E264381529E65800012BF2 /* AGLKContext.h */,
 				03E264391529E65800012BF2 /* AGLKContext.m */,
 				03E2643A1529E65800012BF2 /* AGLKVertexAttribArrayBuffer.h */,
@@ -132,6 +136,17 @@
 				03AF4F4C13F0D90D00639415 /* OpenGLES_Ch3_3-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		304EC50C21BC0CC000A6AD13 /* help */ = {
+			isa = PBXGroup;
+			children = (
+				304EC50D21BC0CC000A6AD13 /* help_Context.h */,
+				304EC50E21BC0CC000A6AD13 /* help_BaseEffect.h */,
+				304EC50F21BC0CC000A6AD13 /* help_TextureInfo.h */,
+			);
+			name = help;
+			path = ../../../AGLKit/help;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +331,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenGLES_Ch3_3/OpenGLES_Ch3_3-Prefix.pch";
 				INFOPLIST_FILE = "OpenGLES_Ch3_3/OpenGLES_Ch3_3-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -327,6 +343,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenGLES_Ch3_3/OpenGLES_Ch3_3-Prefix.pch";
 				INFOPLIST_FILE = "OpenGLES_Ch3_3/OpenGLES_Ch3_3-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

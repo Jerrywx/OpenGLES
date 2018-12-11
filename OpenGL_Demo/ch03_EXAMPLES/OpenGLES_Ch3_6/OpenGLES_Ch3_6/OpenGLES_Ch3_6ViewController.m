@@ -9,28 +9,30 @@
 
 @interface GLKEffectPropertyTexture (AGLKAdditions)
 
-- (void)aglkSetParameter:(GLenum)parameterID 
-   value:(GLint)value;
+///
+- (void)aglkSetParameter:(GLenum)parameterID value:(GLint)value;
    
 @end
 
 
 @implementation GLKEffectPropertyTexture (AGLKAdditions)
 
-- (void)aglkSetParameter:(GLenum)parameterID 
-   value:(GLint)value;
-{
-   glBindTexture(self.target, self.name);
+///
+- (void)aglkSetParameter:(GLenum)parameterID value:(GLint)value {
 
-   glTexParameteri(
-      self.target, 
-      parameterID, 
-      value);
+	///
+	glBindTexture(self.target, self.name);
+	///
+   	glTexParameteri(
+				   	self.target,
+				   	parameterID,
+				   	value);
 }
    
 @end
 
 
+///
 @interface OpenGLES_Ch3_6ViewController ()
 
 - (BOOL)loadShaders;
@@ -48,8 +50,7 @@
 
 /////////////////////////////////////////////////////////////////
 // GLSL program uniform indices.
-enum
-{
+enum {
    UNIFORM_MODELVIEWPROJECTION_MATRIX,
    UNIFORM_NORMAL_MATRIX,
    UNIFORM_TEXTURE0_SAMPLER2D,
@@ -74,8 +75,7 @@ SceneVertex;
 
 /////////////////////////////////////////////////////////////////
 // Define vertex data for a triangle to use in example
-static const SceneVertex vertices[] = 
-{
+static const SceneVertex vertices[] =  {
    {{ 0.5f, -0.5f, -0.5f}, { 1.0f,  0.0f,  0.0f}, {0.0f, 0.0f}},
    {{ 0.5f,  0.5f, -0.5f}, { 1.0f,  0.0f,  0.0f}, {1.0f, 0.0f}}, 
    {{ 0.5f, -0.5f,  0.5f}, { 1.0f,  0.0f,  0.0f}, {0.0f, 1.0f}},
@@ -123,8 +123,7 @@ static const SceneVertex vertices[] =
 /////////////////////////////////////////////////////////////////
 // Called when the view controller's view is loaded
 // Perform initialization before the view is asked to draw
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
    [super viewDidLoad];
    
    // Verify the type of view created automatically by the
@@ -135,8 +134,7 @@ static const SceneVertex vertices[] =
    
    // Create an OpenGL ES 2.0 context and provide it to the
    // view
-   view.context = [[AGLKContext alloc] 
-      initWithAPI:kEAGLRenderingAPIOpenGLES2];
+   view.context = [[AGLKContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
    view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
    
    // Make the new context current
@@ -246,38 +244,38 @@ static const SceneVertex vertices[] =
 // whenever Cocoa Touch asks the view controller's view to
 // draw itself. (In this case, render into a frame buffer that
 // shares memory with a Core Animation Layer)
-- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
-{   
+- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
+	
    // Clear back frame buffer (erase previous drawing)
    [(AGLKContext *)view.context clear:
       GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT];
    
    [self.vertexBuffer prepareToDrawWithAttrib:GLKVertexAttribPosition
-      numberOfCoordinates:3
-      attribOffset:offsetof(SceneVertex, positionCoords)
-      shouldEnable:YES];
+						  numberOfCoordinates:3
+								 attribOffset:offsetof(SceneVertex, positionCoords)
+								 shouldEnable:YES];
 
    [self.vertexBuffer prepareToDrawWithAttrib:GLKVertexAttribNormal
-      numberOfCoordinates:3
-      attribOffset:offsetof(SceneVertex, normalCoords)
-      shouldEnable:YES];
+						  numberOfCoordinates:3
+								 attribOffset:offsetof(SceneVertex, normalCoords)
+								 shouldEnable:YES];
 
    [self.vertexBuffer prepareToDrawWithAttrib:GLKVertexAttribTexCoord0
-      numberOfCoordinates:2
-      attribOffset:offsetof(SceneVertex, textureCoords)
-      shouldEnable:YES];
+						  numberOfCoordinates:2
+								 attribOffset:offsetof(SceneVertex, textureCoords)
+								 shouldEnable:YES];
    
    [self.vertexBuffer prepareToDrawWithAttrib:GLKVertexAttribTexCoord1
-      numberOfCoordinates:2
-      attribOffset:offsetof(SceneVertex, textureCoords)
-      shouldEnable:YES];
+						  numberOfCoordinates:2
+								 attribOffset:offsetof(SceneVertex, textureCoords)
+								 shouldEnable:YES];
 
    [self.baseEffect prepareToDraw];
 
    // Draw triangles using baseEffect
    [self.vertexBuffer drawArrayWithMode:GL_TRIANGLES
-      startVertexIndex:0
-      numberOfVertices:sizeof(vertices) / sizeof(SceneVertex)];
+					   startVertexIndex:0
+					   numberOfVertices:sizeof(vertices) / sizeof(SceneVertex)];
 
    // Render the object again with ES2
    glUseProgram(_program);

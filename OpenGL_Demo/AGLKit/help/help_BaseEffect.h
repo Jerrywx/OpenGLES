@@ -45,14 +45,16 @@
 - (void) prepareToDraw;
 
 
-// Properties                                                                                         // Default Value
+// GL_FALSE
+@property (nonatomic, assign)         GLboolean			colorMaterialEnabled;
+// GL_FALSE
+@property (nonatomic, assign)         GLboolean			lightModelTwoSided;
+// GL_TRUE
+@property (nonatomic, assign)         GLboolean			useConstantColor;
 
-@property (nonatomic, assign)         GLboolean                          colorMaterialEnabled;        // GL_FALSE
-@property (nonatomic, assign)         GLboolean                          lightModelTwoSided;          // GL_FALSE
-@property (nonatomic, assign)         GLboolean                          useConstantColor;            // GL_TRUE
-
-@property (nonatomic, readonly)       GLKEffectPropertyTransform         *transform;                  // Identity Matrices
-@property (nonatomic, readonly)       GLKEffectPropertyLight             *light0, *light1, *light2;   // Disabled
+// Identity Matrices
+@property (nonatomic, readonly)       GLKEffectPropertyTransform		*transform;
+@property (nonatomic, readonly)       GLKEffectPropertyLight		*light0, *light1, *light2;   // Disabled
 @property (nonatomic, assign)         GLKLightingType                    lightingType;                // GLKLightingTypePerVertex
 @property (nonatomic, assign)         GLKVector4                         lightModelAmbientColor;      // { 0.2, 0.2, 0.2, 1.0 }
 @property (nonatomic, readonly)       GLKEffectPropertyMaterial          *material;                   // Default material state

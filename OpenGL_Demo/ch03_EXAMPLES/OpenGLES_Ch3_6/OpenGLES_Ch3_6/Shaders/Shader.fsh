@@ -16,8 +16,7 @@ varying lowp vec4 vColor;
 varying lowp vec2 vTextureCoord0;
 varying lowp vec2 vTextureCoord1;
 
-void main()
-{
+void main() {
    // Get the sampled colors from texture units 0 and 1.
    lowp vec4 color0 = texture2D(uSampler0, vTextureCoord0);
    lowp vec4 color1 = texture2D(uSampler1, vTextureCoord1);

@@ -8,7 +8,7 @@
 #ifndef help_TextureInfo_h
 #define help_TextureInfo_h
 
-
+/// GLKTextureInfo封装了纹理缓存相关的信息
 @interface GLKTextureInfo : NSObject <NSCopying> {
 @private
 	GLuint                      name;

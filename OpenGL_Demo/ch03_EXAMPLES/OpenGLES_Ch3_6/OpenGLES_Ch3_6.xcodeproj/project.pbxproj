@@ -115,8 +115,6 @@
 				03E2645C1529E74D00012BF2 /* AGLKVertexAttribArrayBuffer.m */,
 				03DD21FC13F343DB00146275 /* OpenGLES_Ch3_6AppDelegate.h */,
 				03DD21FD13F343DB00146275 /* OpenGLES_Ch3_6AppDelegate.m */,
-				03DD21FF13F343DB00146275 /* MainStoryboard_iPhone.storyboard */,
-				03DD220213F343DB00146275 /* MainStoryboard_iPad.storyboard */,
 				03DD220513F343DB00146275 /* OpenGLES_Ch3_6ViewController.h */,
 				03DD220613F343DB00146275 /* OpenGLES_Ch3_6ViewController.m */,
 				03DD222D13F34D7300146275 /* Shaders */,
@@ -128,6 +126,8 @@
 		03DD21F413F343DB00146275 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03DD21FF13F343DB00146275 /* MainStoryboard_iPhone.storyboard */,
+				03DD220213F343DB00146275 /* MainStoryboard_iPad.storyboard */,
 				03EC718F1641DBD100CAB35A /* Default-568h@2x.png */,
 				03EC71901641DBD100CAB35A /* OpenGL_ES_for_iOS_57x57.png */,
 				03EC71911641DBD100CAB35A /* OpenGL_ES_for_iOS_72x72.png */,
@@ -336,6 +336,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenGLES_Ch3_6/OpenGLES_Ch3_6-Prefix.pch";
 				INFOPLIST_FILE = "OpenGLES_Ch3_6/OpenGLES_Ch3_6-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -347,6 +348,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenGLES_Ch3_6/OpenGLES_Ch3_6-Prefix.pch";
 				INFOPLIST_FILE = "OpenGLES_Ch3_6/OpenGLES_Ch3_6-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -91,7 +91,8 @@
 				numberOfCoordinates:(GLint)count
 				   attribOffset:(GLsizeiptr)offset
 				   shouldEnable:(BOOL)shouldEnable {
-	
+
+	///
    	NSParameterAssert((0 < count) && (count < 4));
 	NSParameterAssert(offset < self.stride);
    	NSAssert(0 != name, @"Invalid name");
@@ -107,8 +108,7 @@
    	}
 
 	/// 设置合适的格式从buffer里面读取数据
-   	glVertexAttribPointer(
-						  index,               // Identifies the attribute to use
+   	glVertexAttribPointer(index,               // Identifies the attribute to use
 						  count,               // number of coordinates for attribute
 						  GL_FLOAT,            // data is floating point
 						  GL_FALSE,            // no fixed point scaling
@@ -118,8 +118,7 @@
 #ifdef DEBUG
    {  // Report any errors 
       GLenum error = glGetError();
-      if(GL_NO_ERROR != error)
-      {
+      if(GL_NO_ERROR != error) {
          NSLog(@"GL Error: 0x%x", error);
       }
    }
@@ -167,3 +166,5 @@
 }
 
 @end
+
+

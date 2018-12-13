@@ -105,14 +105,12 @@
 		032DDCAC13F3071100225A03 /* OpenGLES_Ch3_5 */ = {
 			isa = PBXGroup;
 			children = (
+				032DDCB513F3071100225A03 /* OpenGLES_Ch3_5AppDelegate.h */,
+				032DDCB613F3071100225A03 /* OpenGLES_Ch3_5AppDelegate.m */,
 				03E2644E1529E70500012BF2 /* AGLKContext.h */,
 				03E2644F1529E70500012BF2 /* AGLKContext.m */,
 				03E264501529E70500012BF2 /* AGLKVertexAttribArrayBuffer.h */,
 				03E264511529E70500012BF2 /* AGLKVertexAttribArrayBuffer.m */,
-				032DDCB513F3071100225A03 /* OpenGLES_Ch3_5AppDelegate.h */,
-				032DDCB613F3071100225A03 /* OpenGLES_Ch3_5AppDelegate.m */,
-				032DDCB813F3071100225A03 /* MainStoryboard_iPhone.storyboard */,
-				032DDCBB13F3071100225A03 /* MainStoryboard_iPad.storyboard */,
 				032DDCBE13F3071100225A03 /* OpenGLES_Ch3_5ViewController.h */,
 				032DDCBF13F3071100225A03 /* OpenGLES_Ch3_5ViewController.m */,
 				032DDCAD13F3071100225A03 /* Supporting Files */,
@@ -123,6 +121,8 @@
 		032DDCAD13F3071100225A03 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				032DDCB813F3071100225A03 /* MainStoryboard_iPhone.storyboard */,
+				032DDCBB13F3071100225A03 /* MainStoryboard_iPad.storyboard */,
 				03B674091641E1C90070309F /* beetle.png */,
 				03B6740A1641E1C90070309F /* leaves.gif */,
 				03EC71821641DBB700CAB35A /* Default-568h@2x.png */,
@@ -320,6 +320,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenGLES_Ch3_5/OpenGLES_Ch3_5-Prefix.pch";
 				INFOPLIST_FILE = "OpenGLES_Ch3_5/OpenGLES_Ch3_5-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -331,6 +332,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenGLES_Ch3_5/OpenGLES_Ch3_5-Prefix.pch";
 				INFOPLIST_FILE = "OpenGLES_Ch3_5/OpenGLES_Ch3_5-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

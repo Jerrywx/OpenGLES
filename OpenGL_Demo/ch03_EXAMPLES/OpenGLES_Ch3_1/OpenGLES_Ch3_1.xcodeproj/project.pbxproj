@@ -55,9 +55,6 @@
 		03EC714F1641DB5400CAB35A /* OpenGL_ES_for_iOS_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_57x57.png; path = ../../../Resources/OpenGL_ES_for_iOS_57x57.png; sourceTree = "<group>"; };
 		03EC71501641DB5400CAB35A /* OpenGL_ES_for_iOS_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_72x72.png; path = ../../../Resources/OpenGL_ES_for_iOS_72x72.png; sourceTree = "<group>"; };
 		03EC71511641DB5400CAB35A /* OpenGL_ES_for_iOS_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenGL_ES_for_iOS_114x114.png; path = ../../../Resources/OpenGL_ES_for_iOS_114x114.png; sourceTree = "<group>"; };
-		341850A921B8B53300ABB9BB /* help_BaseEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = help_BaseEffect.h; sourceTree = "<group>"; };
-		341850AB21B8BCEF00ABB9BB /* help_Context.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = help_Context.h; sourceTree = "<group>"; };
-		341850AC21B8C1D100ABB9BB /* help_TextureInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = help_TextureInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +107,6 @@
 		039224CC13E7187E00053DB2 /* OpenGLES_Ch3_1 */ = {
 			isa = PBXGroup;
 			children = (
-				341850AA21B8BCB600ABB9BB /* help */,
 				039224D513E7187E00053DB2 /* OpenGLES_Ch3_1AppDelegate.h */,
 				039224D613E7187E00053DB2 /* OpenGLES_Ch3_1AppDelegate.m */,
 				03E2641A15295A9500012BF2 /* AGLKContext.h */,
@@ -140,16 +136,6 @@
 				039224D413E7187E00053DB2 /* OpenGLES_Ch3_1-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		341850AA21B8BCB600ABB9BB /* help */ = {
-			isa = PBXGroup;
-			children = (
-				341850A921B8B53300ABB9BB /* help_BaseEffect.h */,
-				341850AB21B8BCEF00ABB9BB /* help_Context.h */,
-				341850AC21B8C1D100ABB9BB /* help_TextureInfo.h */,
-			);
-			name = help;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -22,8 +22,8 @@ static const NSInteger kAGLKDefaultFramesPerSecond = 30;
 // and configured to prompt redraw of the receiver's view
 // at the default number of frames per second rate.
 - (id)initWithNibName:(NSString *)nibNameOrNil 
-   bundle:(NSBundle *)nibBundleOrNil;
-{
+			   bundle:(NSBundle *)nibBundleOrNil {
+
     if(nil != (self = [super initWithNibName:nibNameOrNil 
        bundle:nibBundleOrNil]))
     {
@@ -51,10 +51,9 @@ static const NSInteger kAGLKDefaultFramesPerSecond = 30;
 // The receiver's Core Animation displayLink instance is created
 // and configured to prompt redraw of the receiver's view
 // at the default number of frames per second rate.
-- (id)initWithCoder:(NSCoder*)coder
-{    
-   if (nil != (self = [super initWithCoder:coder]))
-   {
+- (id)initWithCoder:(NSCoder*)coder {
+	
+   if (nil != (self = [super initWithCoder:coder])) {
       displayLink = 
          [CADisplayLink displayLinkWithTarget:self 
             selector:@selector(drawView:)];
@@ -71,13 +70,15 @@ static const NSInteger kAGLKDefaultFramesPerSecond = 30;
    return self;
 }
 
+- (void)loadView {
+	self.view = [[AGLKView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+}
 
 /////////////////////////////////////////////////////////////////
 // This method is called when the view controller's view is 
 // loaded and performs initialization before the view is asked 
 // to draw.
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
    [super viewDidLoad];
    
    // Verify the type of view created automatically by the

@@ -789,7 +789,11 @@ GL_API void GL_APIENTRY glBufferData (GLenum target,
 	GL_API GLuint         GL_APIENTRY glCreateProgram (void)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
 	GL_API GLuint         GL_APIENTRY glCreateShader (GLenum type)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
 	GL_API void           GL_APIENTRY glCullFace (GLenum mode) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
-	GL_API void           GL_APIENTRY glDeleteBuffers (GLsizei n, const GLuint* buffers) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+
+/// 删除缓存区域
+GL_API void GL_APIENTRY glDeleteBuffers (GLsizei n,
+										 const GLuint* buffers);
+
 	GL_API void           GL_APIENTRY glDeleteFramebuffers (GLsizei n, const GLuint* framebuffers)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
 	GL_API void           GL_APIENTRY glDeleteProgram (GLuint program)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
 	GL_API void           GL_APIENTRY glDeleteRenderbuffers (GLsizei n, const GLuint* renderbuffers)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
@@ -854,12 +858,18 @@ GL_API void GL_APIENTRY glFrontFace (GLenum mode);
 /// 创建缓存对象并且返回缓存对象的标示符
 GL_API void GL_APIENTRY glGenBuffers (GLsizei n, GLuint* buffers);
 
+GL_API void GL_APIENTRY glGenerateMipmap (GLenum target);
 
 
-	GL_API void           GL_APIENTRY glGenerateMipmap (GLenum target)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
-	GL_API void           GL_APIENTRY glGenFramebuffers (GLsizei n, GLuint* framebuffers)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
-	GL_API void           GL_APIENTRY glGenRenderbuffers (GLsizei n, GLuint* renderbuffers)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
-	GL_API void           GL_APIENTRY glGenTextures (GLsizei n, GLuint* textures) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+GL_API void GL_APIENTRY glGenFramebuffers (GLsizei n,
+										   GLuint* framebuffers);
+
+GL_API void GL_APIENTRY glGenRenderbuffers (GLsizei n,
+											GLuint* renderbuffers);
+
+GL_API void GL_APIENTRY glGenTextures (GLsizei n, GLuint* textures);
+
+
 	GL_API void           GL_APIENTRY glGetActiveAttrib (GLuint program, GLuint index, GLsizei bufsize, GLsizei* length, GLint* size, GLenum* type, GLchar* name)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
 	GL_API void           GL_APIENTRY glGetActiveUniform (GLuint program, GLuint index, GLsizei bufsize, GLsizei* length, GLint* size, GLenum* type, GLchar* name)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
 	GL_API void           GL_APIENTRY glGetAttachedShaders (GLuint program, GLsizei maxcount, GLsizei* count, GLuint* shaders)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));

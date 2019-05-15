@@ -8,6 +8,10 @@
 
 #import "ViewController.h"
 #import "Demo1ViewController.h"
+#import "Demo2ViewController.h"
+#import "Demo3ViewController.h"
+#import "Section2Demo1Controller.h"
+#import "Section4Demo1Controller.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -47,11 +51,11 @@
 #pragma mark - UITableViewDataSource
 ///
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 11;
+	return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 3;
+	return 13;
 }
 
 ///
@@ -67,9 +71,42 @@
 /// 点击列表
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
-	Demo1ViewController *demoVC = [[Demo1ViewController alloc] init];
-	[self.navigationController pushViewController:demoVC animated:YES];
+	switch (indexPath.row) {
+		case 0: {
+			Demo1ViewController *demoVC = [[Demo1ViewController alloc] init];
+			[self.navigationController pushViewController:demoVC animated:YES];
+		}
+			break;
+			
+		case 1: {
+			Demo2ViewController *demoVC = [[Demo2ViewController alloc] init];
+			[self.navigationController pushViewController:demoVC animated:YES];
+		}
+			break;
+			
+		case 2: {
+			Demo3ViewController *demoVC = [[Demo3ViewController alloc] init];
+			[self.navigationController pushViewController:demoVC animated:YES];
+		}
+			break;
+		case 3: {
+			Section2Demo1Controller *demoVC = [[Section2Demo1Controller alloc] init];
+			[self.navigationController pushViewController:demoVC animated:YES];
+		}
+			break;
+		
+		case 4: {
+			Section4Demo1Controller *demoVC = [[Section4Demo1Controller alloc] init];
+			[self.navigationController pushViewController:demoVC animated:YES];
+		}
+			break;
+//
+			
+		default:
+			break;
+	}
 }
 
 @end

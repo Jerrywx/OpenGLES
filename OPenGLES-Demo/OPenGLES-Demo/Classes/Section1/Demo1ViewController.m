@@ -8,7 +8,7 @@
 
 #import "Demo1ViewController.h"
 
-@interface Demo1ViewController (test)
+@interface Demo1ViewController ()
 
 @property (nonatomic, strong) NSString		*testString;
 
@@ -31,7 +31,7 @@ static const SceneVertex vertices[] =
 	/// X  , Y    , Z
 	{{-1.0f, -0.5f, 0.0}}, // lower left corner
 	{{ 1.0f, -0.5f, 0.0}}, // lower right corner
-	{{-0.0f,  1.0f, 1.0}}  // upper left corner
+	{{-0.0f,  0.5f, 1.0}}  // upper left corner
 };
 
 

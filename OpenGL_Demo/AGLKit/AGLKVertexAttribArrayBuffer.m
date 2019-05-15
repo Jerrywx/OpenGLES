@@ -118,8 +118,7 @@
 #ifdef DEBUG
    {  // Report any errors 
       GLenum error = glGetError();
-      if(GL_NO_ERROR != error)
-      {
+      if(GL_NO_ERROR != error) {
          NSLog(@"GL Error: 0x%x", error);
       }
    }
@@ -167,3 +166,5 @@
 }
 
 @end
+
+

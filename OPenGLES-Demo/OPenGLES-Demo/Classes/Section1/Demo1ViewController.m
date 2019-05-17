@@ -26,8 +26,7 @@ SceneVertex;
 
 /// 2. vertices 变量是一个用定点数据初始化的普通C数组, 这个变量用来定义一个三角形。
 /// 默认用于一个OpenGL上下文的可见坐标系是分别沿着X、Y、Z轴 从-1.0延伸到1.0的。
-static const SceneVertex vertices[] =
-{
+static const SceneVertex vertices[] = {
 	/// X  , Y    , Z
 	{{-1.0f, -0.5f, 0.0}}, // lower left corner
 	{{ 1.0f, -0.5f, 0.0}}, // lower right corner

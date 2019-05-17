@@ -39,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		304BDDB2228DB72600E06B45 /* help_glkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = help_glkViewController.h; sourceTree = "<group>"; };
 		305390A7228C550800312F73 /* Demo2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo2ViewController.h; sourceTree = "<group>"; };
 		305390A8228C550800312F73 /* Demo2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo2ViewController.m; sourceTree = "<group>"; };
 		305390B1228C58DD00312F73 /* AGLKTextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKTextureLoader.h; sourceTree = "<group>"; };
@@ -110,7 +111,7 @@
 		305390B0228C58DD00312F73 /* AGLKit */ = {
 			isa = PBXGroup;
 			children = (
-				305390CC228C58DD00312F73 /* help */,
+				305390BF228C58DD00312F73 /* Shaders */,
 				305390B1228C58DD00312F73 /* AGLKTextureLoader.h */,
 				305390B2228C58DD00312F73 /* AGLKView.m */,
 				305390B3228C58DD00312F73 /* AGLKTextureTransformBaseEffect.m */,
@@ -125,7 +126,6 @@
 				305390BC228C58DD00312F73 /* AGLKView.h */,
 				305390BD228C58DD00312F73 /* AGLKTextureLoader.m */,
 				305390BE228C58DD00312F73 /* AGLKCollision.m */,
-				305390BF228C58DD00312F73 /* Shaders */,
 				305390C6228C58DD00312F73 /* AGLKTextureTransformBaseEffect.h */,
 				305390C7228C58DD00312F73 /* AGLKFrustum.h */,
 				305390C8228C58DD00312F73 /* AGLKSkyboxEffect.m */,
@@ -161,6 +161,7 @@
 				305390CF228C58DD00312F73 /* help_gl2.h */,
 				305390D0228C58DD00312F73 /* help_gl3.h */,
 				305390D1228C58DD00312F73 /* help_TextureInfo.h */,
+				304BDDB2228DB72600E06B45 /* help_glkViewController.h */,
 			);
 			path = help;
 			sourceTree = "<group>";
@@ -226,6 +227,7 @@
 		C46855191DC1CA01003C4AD7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				305390CC228C58DD00312F73 /* help */,
 				305390B0228C58DD00312F73 /* AGLKit */,
 				C468551B1DC1CA01003C4AD7 /* MainController */,
 				C468551A1DC1CA01003C4AD7 /* Section1 */,
@@ -298,6 +300,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

@@ -17,6 +17,8 @@
 
 /// 列表
 @property (nonatomic, strong) UITableView		*tableView;
+///
+@property (nonatomic, strong) NSArray			*titles;
 
 @end
 
@@ -24,6 +26,14 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
+	self.titles = @[@"Section1",
+					@"Section1-Demo1",
+					@"Section1-Demo2",
+					@"Section1-Demo3",
+					@"Section2-Demo1",
+					@"Section2-Demo2",
+					@"Section3",];
 	
 	/// 初始化界面
 	[self setupView];
@@ -55,7 +65,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 13;
+	return self.titles.count;
 }
 
 ///
@@ -63,7 +73,7 @@
 		 						cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-	cell.textLabel.text = @"TEST";
+	cell.textLabel.text = self.titles[indexPath.row];
 	return cell;
 }
 

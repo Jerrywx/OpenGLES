@@ -55,9 +55,11 @@ static const SceneVertex vertices[] = {
 	// Create a base effect that provides standard OpenGL ES 2.0
 	// Shading Language programs and set constants to be used for
 	// all subsequent rendering
-	///
+	/// GLKBaseEffect旨在简化当今许多OpenGL应用程序常见的视觉效果
 	self.baseEffect = [[GLKBaseEffect alloc] init];
-	self.baseEffect.useConstantColor = GL_TRUE;
+    self.baseEffect.useConstantColor = GL_TRUE;
+//    self.baseEffect.lightModelTwoSided = GL_TRUE;
+//    self.baseEffect.colorMaterialEnabled = GL_TRUE;
 	self.baseEffect.constantColor = GLKVector4Make(
 												   1.0f, // Red
 												   .0f, // Green

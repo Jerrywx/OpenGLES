@@ -12,15 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class AGLKVertexAttribArrayBuffer;
 
-@interface Demo3ViewController : GLKViewController
-{
+@interface Demo3ViewController : GLKViewController {
 	AGLKVertexAttribArrayBuffer *vertexBuffer;
 }
 
-@property (strong, nonatomic) GLKBaseEffect
-*baseEffect;
-@property (strong, nonatomic) AGLKVertexAttribArrayBuffer
-*vertexBuffer;
+/// 
+@property (strong, nonatomic) GLKBaseEffect                     *baseEffect;
+
+///
+@property (strong, nonatomic) AGLKVertexAttribArrayBuffer       *vertexBuffer;
 
 @end
 

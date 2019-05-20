@@ -118,25 +118,25 @@
 				305390B2228C58DD00312F73 /* AGLKView.m */,
 				305390D4228C58DD00312F73 /* AGLKViewController.h */,
 				305390B8228C58DD00312F73 /* AGLKViewController.m */,
+				305390C6228C58DD00312F73 /* AGLKTextureTransformBaseEffect.h */,
 				305390B3228C58DD00312F73 /* AGLKTextureTransformBaseEffect.m */,
+				305390D3228C58DD00312F73 /* AGLKAxisAllignedBoundingBox.h */,
 				305390B4228C58DD00312F73 /* AGLKCollision.h */,
 				305390B5228C58DD00312F73 /* AGLKContext.m */,
 				305390B6228C58DD00312F73 /* AGLKSkyboxEffect.h */,
 				305390B7228C58DD00312F73 /* AGLKFrustum.m */,
-				305390B9228C58DD00312F73 /* AGLKVertexAttribArrayBuffer.m */,
 				305390BA228C58DD00312F73 /* AGLKFilters.h */,
 				305390BB228C58DD00312F73 /* AGLKPointParticleEffect.m */,
 				305390B1228C58DD00312F73 /* AGLKTextureLoader.h */,
 				305390BD228C58DD00312F73 /* AGLKTextureLoader.m */,
 				305390BE228C58DD00312F73 /* AGLKCollision.m */,
-				305390C6228C58DD00312F73 /* AGLKTextureTransformBaseEffect.h */,
 				305390C7228C58DD00312F73 /* AGLKFrustum.h */,
 				305390C8228C58DD00312F73 /* AGLKSkyboxEffect.m */,
 				305390C9228C58DD00312F73 /* AGLKContext.h */,
 				305390CA228C58DD00312F73 /* AGLKPointParticleEffect.h */,
 				305390CB228C58DD00312F73 /* AGLKFilters.m */,
 				305390D2228C58DD00312F73 /* AGLKVertexAttribArrayBuffer.h */,
-				305390D3228C58DD00312F73 /* AGLKAxisAllignedBoundingBox.h */,
+				305390B9228C58DD00312F73 /* AGLKVertexAttribArrayBuffer.m */,
 			);
 			name = AGLKit;
 			path = ../../../OpenGL_Demo/AGLKit;
@@ -302,7 +302,7 @@
 				TargetAttributes = {
 					C46854FE1DC1C8AB003C4AD7 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 58VU78V7N6;
+						DevelopmentTeam = B5SJ8JYP65;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -489,7 +489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 58VU78V7N6;
+				DEVELOPMENT_TEAM = B5SJ8JYP65;
 				INFOPLIST_FILE = "OPenGLES-Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -502,7 +502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 58VU78V7N6;
+				DEVELOPMENT_TEAM = B5SJ8JYP65;
 				INFOPLIST_FILE = "OPenGLES-Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

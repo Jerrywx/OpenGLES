@@ -157,9 +157,6 @@
    	[EAGLContext setCurrentContext:self.context];
 	///
 	
-	NSLog(@"=============== AAA");
-	
-	
 	if (self.time % 2 == 0) {
 		glViewport(0, 0, (GLint)self.drawableWidth * 0.5, (GLint)self.drawableHeight * 0.5);
 	} else {

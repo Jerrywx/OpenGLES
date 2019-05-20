@@ -25,8 +25,8 @@ SceneVertex;
 
 /////////////////////////////////////////////////////////////////
 // Define vertex data for a triangle to use in example
-static const SceneVertex vertices[] =
-{
+/// 绘制点数组
+static const SceneVertex vertices[] = {
 	{{-0.5f, -0.5f, 0.0}}, // lower left corner
 	{{ 0.5f, -0.5f, 0.0}}, // lower right corner
 	{{-0.5f,  0.5f, 0.0}}  // upper left corner
@@ -36,8 +36,7 @@ static const SceneVertex vertices[] =
 /////////////////////////////////////////////////////////////////
 // Called when the view controller's view is loaded
 // Perform initialization before the view is asked to draw
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
 	[super viewDidLoad];
 	
 	// Verify the type of view created automatically by the
@@ -48,9 +47,9 @@ static const SceneVertex vertices[] =
 	
 	// Create an OpenGL ES 2.0 context and provide it to the
 	// view
+    /// 创建设置上下文
 	view.context = [[AGLKContext alloc]
 					initWithAPI:kEAGLRenderingAPIOpenGLES2];
-	
 	// Make the new context current
 	[AGLKContext setCurrentContext:view.context];
 	
@@ -73,11 +72,10 @@ static const SceneVertex vertices[] =
 															  1.0f);// Alpha
 	
 	// Create vertex buffer containing vertices to draw
-	self.vertexBuffer = [[AGLKVertexAttribArrayBuffer alloc]
-						 initWithAttribStride:sizeof(SceneVertex)
-						 numberOfVertices:sizeof(vertices) / sizeof(SceneVertex)
-						 bytes:vertices
-						 usage:GL_STATIC_DRAW];
+	self.vertexBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:sizeof(SceneVertex)
+                                                                 numberOfVertices:sizeof(vertices) /    sizeof(SceneVertex)
+                                                                            bytes:vertices
+                                                                            usage:GL_STATIC_DRAW];
 }
 
 
@@ -86,8 +84,7 @@ static const SceneVertex vertices[] =
 // whenever Cocoa Touch asks the view controller's view to
 // draw itself. (In this case, render into a frame buffer that
 // shares memory with a Core Animation Layer)
-- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
-{
+- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
 	[self.baseEffect prepareToDraw];
 	
 	// Clear back frame buffer (erase previous drawing)
@@ -110,8 +107,8 @@ static const SceneVertex vertices[] =
 // Called when the view controller's view has been unloaded
 // Perform clean-up that is possible when you know the view
 // controller's view won't be asked to draw again soon.
-- (void)viewDidUnload
-{
+/// 卸载
+- (void)viewDidUnload {
 	[super viewDidUnload];
 	
 	// Make the view's context current

@@ -25,19 +25,24 @@ SceneVertex;
 
 /////////////////////////////////////////////////////////////////
 // Define vertex data for a triangle to use in example
-static const SceneVertex vertices[] =
-{
-	{{-0.5f, -0.5f, 0.0}}, // lower left corner
-	{{ 0.5f, -0.5f, 0.0}}, // lower right corner
-	{{-0.5f,  0.5f, 0.0}}  // upper left corner
+//static const SceneVertex vertices[] = {
+//    {{-0.5f, -0.5f, 0.0}}, // lower left corner
+//    {{ 0.5f, -0.5f, 0.0}}, // lower right corner
+//    {{-0.5f,  0.5f, 0.0}}  // upper left corner
+//};
+
+static const SceneVertex vertices[] = {
+    {{-0.5f, -0.5f, 0.0}}, // lower left corner
+    {{ 0.5f, -0.5f, 0.0}}, // lower right corner
+//    {{-0.5f,  0.5f, 0.0}},  // upper left corner
+    {{ 0.5f,  0.5f, 0.0}},  // upper left corner
 };
 
 
 /////////////////////////////////////////////////////////////////
 // Called when the view controller's view is loaded
 // Perform initialization before the view is asked to draw
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
 	[super viewDidLoad];
 	
 	// Verify the type of view created automatically by the
@@ -66,7 +71,7 @@ static const SceneVertex vertices[] =
 												   1.0f);// Alpha
 	
 	// Set the background color stored in the current context
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // background color
+	glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // background color
 	
 	// Generate, bind, and initialize contents of a buffer to be
 	// stored in GPU memory
@@ -87,8 +92,7 @@ static const SceneVertex vertices[] =
 // whenever Cocoa Touch asks the view controller's view to
 // draw itself. (In this case, render into a frame buffer that
 // shares memory with a Core Animation Layer)
-- (void)glkView:(AGLKView *)view drawInRect:(CGRect)rect
-{
+- (void)glkView:(AGLKView *)view drawInRect:(CGRect)rect {
 	[self.baseEffect prepareToDraw];
 	
 	// Clear back frame buffer (erase previous drawing)
@@ -119,13 +123,11 @@ static const SceneVertex vertices[] =
 // Called when the view controller's view has been unloaded
 // Perform clean-up that is possible when you know the view
 // controller's view won't be asked to draw again soon.
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
 	[super viewDidUnload];
 	
 	// Delete buffers that aren't needed when view is unloaded
-	if (0 != vertexBufferID)
-	{
+	if (0 != vertexBufferID) {
 		glDeleteBuffers (1,          // STEP 7
 						 &vertexBufferID);
 		vertexBufferID = 0;
@@ -135,4 +137,5 @@ static const SceneVertex vertices[] =
 	((AGLKView *)self.view).context = nil;
 	[EAGLContext setCurrentContext:nil];
 }
+
 @end

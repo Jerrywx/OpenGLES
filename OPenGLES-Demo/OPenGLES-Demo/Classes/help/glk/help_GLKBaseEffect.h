@@ -16,8 +16,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 OPENGL_DEPRECATED(10.8,10.14) OPENGLES_DEPRECATED(ios(5.0,12.0), tvos(9.0,12.0))
-@interface GLKBaseEffect : NSObject <GLKNamedEffect>
-{
+@interface GLKBaseEffect : NSObject <GLKNamedEffect> {
 @protected
 	
 	// Switches to turn effect features on and off
@@ -56,6 +55,9 @@ OPENGL_DEPRECATED(10.8,10.14) OPENGLES_DEPRECATED(ios(5.0,12.0), tvos(9.0,12.0))
 
 // Properties                                                                                         // Default Value
 
+/// 一个布尔值，指示在计算灯光与材质的交互时是否使用颜色顶点属性。
+/// https://blog.csdn.net/tianxiawuzhei/article/details/50113763
+/// OpenGL - 关于顶点属性的理解 https://www.jianshu.com/p/12b0c198c2e0
 @property (nonatomic, assign)         GLboolean                          colorMaterialEnabled;        // GL_FALSE
 @property (nonatomic, assign)         GLboolean                          lightModelTwoSided;          // GL_FALSE
 @property (nonatomic, assign)         GLboolean                          useConstantColor;            // GL_TRUE

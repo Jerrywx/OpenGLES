@@ -9,9 +9,7 @@
 @class CADisplayLink;
 
 
-@interface AGLKViewController : UIViewController 
-   <AGLKViewDelegate>
-{
+@interface AGLKViewController : UIViewController <AGLKViewDelegate> {
    CADisplayLink     *displayLink;
    NSInteger         preferredFramesPerSecond;
 }

@@ -24,22 +24,16 @@ static const NSInteger kAGLKDefaultFramesPerSecond = 30;
 - (id)initWithNibName:(NSString *)nibNameOrNil 
 			   bundle:(NSBundle *)nibBundleOrNil {
 
-    if(nil != (self = [super initWithNibName:nibNameOrNil 
-       bundle:nibBundleOrNil]))
-    {
-      displayLink = 
-         [CADisplayLink displayLinkWithTarget:self 
-            selector:@selector(drawView:)];
+    if(nil != (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+      displayLink = [CADisplayLink displayLinkWithTarget:self
+												selector:@selector(drawView:)];
 
-      self.preferredFramesPerSecond = 
-         kAGLKDefaultFramesPerSecond;
+      self.preferredFramesPerSecond = kAGLKDefaultFramesPerSecond;
 
-      [displayLink addToRunLoop:[NSRunLoop currentRunLoop] 
-         forMode:NSDefaultRunLoopMode];
-         
+      [displayLink addToRunLoop:[NSRunLoop currentRunLoop]
+						forMode:NSDefaultRunLoopMode];
       self.paused = NO;
     }
-    
     return self;
 }
 
@@ -54,22 +48,19 @@ static const NSInteger kAGLKDefaultFramesPerSecond = 30;
 - (id)initWithCoder:(NSCoder*)coder {
 	
    if (nil != (self = [super initWithCoder:coder])) {
-      displayLink = 
-         [CADisplayLink displayLinkWithTarget:self 
-            selector:@selector(drawView:)];
+      displayLink = [CADisplayLink displayLinkWithTarget:self
+												selector:@selector(drawView:)];
 
-      self.preferredFramesPerSecond = 
-         kAGLKDefaultFramesPerSecond;
+      self.preferredFramesPerSecond = kAGLKDefaultFramesPerSecond;
 
       [displayLink addToRunLoop:[NSRunLoop currentRunLoop] 
-         forMode:NSDefaultRunLoopMode];
-         
+						forMode:NSDefaultRunLoopMode];
       self.paused = NO;
    }
-   
    return self;
 }
 
+///
 - (void)loadView {
 	self.view = [[AGLKView alloc] initWithFrame:[UIScreen mainScreen].bounds];
 }
@@ -135,16 +126,15 @@ static const NSInteger kAGLKDefaultFramesPerSecond = 30;
 // This method is called at the receiver's framesPerSecond rate
 // when the receiver is not paused and instructs the receiver's 
 // view to redraw.
-- (void)drawView:(id)sender
-{
+/// 调用 display 刷新
+- (void)drawView:(id)sender {
    [(AGLKView *)self.view display];
 }
 
 
 /////////////////////////////////////////////////////////////////
 // Returns the receiver's framesPerSecond property value.  
-- (NSInteger)framesPerSecond;
-{
+- (NSInteger)framesPerSecond; {
    return 60 / displayLink.frameInterval;
 }
 
@@ -152,8 +142,7 @@ static const NSInteger kAGLKDefaultFramesPerSecond = 30;
 /////////////////////////////////////////////////////////////////
 // This method returns the desired frames per second rate at for
 // redrawing the receiver's view.
-- (NSInteger)preferredFramesPerSecond;
-{
+- (NSInteger)preferredFramesPerSecond; {
    return preferredFramesPerSecond;
 }
 
@@ -161,8 +150,7 @@ static const NSInteger kAGLKDefaultFramesPerSecond = 30;
 /////////////////////////////////////////////////////////////////
 // This method sets the desired frames per second rate at for
 // redrawing the receiver's view.
-- (void)setPreferredFramesPerSecond:(NSInteger)aValue
-{
+- (void)setPreferredFramesPerSecond:(NSInteger)aValue {
    preferredFramesPerSecond = aValue;
    
    displayLink.frameInterval = MAX(1, (60 / aValue));
@@ -173,8 +161,7 @@ static const NSInteger kAGLKDefaultFramesPerSecond = 30;
 // This method returns YES if the receiver is paused and NO 
 // otherwise. The receiver does not automatically prompt redraw
 // of the receiver's view when paused.
-- (BOOL)isPaused
-{
+- (BOOL)isPaused {
    return displayLink.paused;
 }
 
@@ -183,8 +170,7 @@ static const NSInteger kAGLKDefaultFramesPerSecond = 30;
 // This method sets whether the receiver is paused. The receiver 
 // automatically prompts redraw of the receiver's view 
 // unless paused.
-- (void)setPaused:(BOOL)aValue
-{
+- (void)setPaused:(BOOL)aValue {
    displayLink.paused = aValue;
 }
 
@@ -193,8 +179,7 @@ static const NSInteger kAGLKDefaultFramesPerSecond = 30;
 // This required AGLKViewDelegate method does nothing. Subclasses
 // of this class may override this method to draw on behalf of
 // the receiver's view.
-- (void)glkView:(AGLKView *)view drawInRect:(CGRect)rect;
-{
+- (void)glkView:(AGLKView *)view drawInRect:(CGRect)rect {
 }
 
 @end

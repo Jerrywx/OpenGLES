@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "Person+pp.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
 	[self setupWindow];
+	
+	Person *p = [Person new];
+	[p hahahaha];
 	
 	return YES;
 }

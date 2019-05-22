@@ -22,8 +22,7 @@ SceneVertex;
 
 /////////////////////////////////////////////////////////////////
 // Define vertex data for a triangle to use in example
-static const SceneVertex vertices[] = 
-{
+static const SceneVertex vertices[] =  {
    {{-0.5f, -0.5f, 0.0f}, {0.0f, 0.0f}}, // lower left corner
    {{ 0.5f, -0.5f, 0.0f}, {1.0f, 0.0f}}, // lower right corner
    {{-0.5f,  0.5f, 0.0f}, {0.0f, 1.0f}}, // upper left corner
@@ -33,8 +32,7 @@ static const SceneVertex vertices[] =
 /////////////////////////////////////////////////////////////////
 // Called when the view controller's view is loaded
 // Perform initialization before the view is asked to draw
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
    [super viewDidLoad];
    
    // Verify the type of view created automatically by the
@@ -78,10 +76,15 @@ static const SceneVertex vertices[] =
    
 	/// 读取图片
    	CGImageRef imageRef = [[UIImage imageNamed:@"leaves.gif"] CGImage];
-      
    	GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithCGImage:imageRef
 															   options:nil
 																 error:NULL];
+	
+	NSLog(@"========== %d", textureInfo.name);
+	NSLog(@"========== %d", textureInfo.target);
+	NSLog(@"========== %d", textureInfo.width);
+	NSLog(@"========== %d", textureInfo.height);
+	
 	
 	/// 设置纹理
    	self.baseEffect.texture2d0.name = textureInfo.name;

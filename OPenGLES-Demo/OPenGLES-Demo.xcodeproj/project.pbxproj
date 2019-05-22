@@ -29,6 +29,12 @@
 		305390ED228C5C9C00312F73 /* leaves.gif in Resources */ = {isa = PBXBuildFile; fileRef = 305390EC228C5C9C00312F73 /* leaves.gif */; };
 		305390F2228C650400312F73 /* Section2Demo1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 305390F1228C650400312F73 /* Section2Demo1Controller.m */; };
 		305390F5228C653100312F73 /* Section4Demo1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 305390F4228C653100312F73 /* Section4Demo1Controller.m */; };
+		30E9AB952292E812002BD3A1 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E9AB942292E812002BD3A1 /* Person.m */; };
+		30E9AB992292EA15002BD3A1 /* Person+AAAA.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E9AB982292EA15002BD3A1 /* Person+AAAA.m */; };
+		30FA451F2294384000ACAC94 /* TESTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FA451E2294384000ACAC94 /* TESTViewController.m */; };
+		30FA452222943C5600ACAC94 /* TESTView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FA452122943C5600ACAC94 /* TESTView.m */; };
+		30FA45262295954000ACAC94 /* Shader1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FA45252295954000ACAC94 /* Shader1Controller.m */; };
+		30FA45292295954D00ACAC94 /* ShaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FA45282295954D00ACAC94 /* ShaderView.m */; };
 		C46855041DC1C8AB003C4AD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C46855031DC1C8AB003C4AD7 /* main.m */; };
 		C46855071DC1C8AB003C4AD7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C46855061DC1C8AB003C4AD7 /* AppDelegate.m */; };
 		C468550D1DC1C8AB003C4AD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C468550B1DC1C8AB003C4AD7 /* Main.storyboard */; };
@@ -85,6 +91,22 @@
 		305390F4228C653100312F73 /* Section4Demo1Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Section4Demo1Controller.m; sourceTree = "<group>"; };
 		30A969B622902FDE0071048A /* help_GLKBaseEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = help_GLKBaseEffect.h; sourceTree = "<group>"; };
 		30A969B8229036280071048A /* help_EAGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = help_EAGL.h; sourceTree = "<group>"; };
+		30E9AB932292E812002BD3A1 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		30E9AB942292E812002BD3A1 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		30E9AB962292E81F002BD3A1 /* Person+pp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+pp.h"; sourceTree = "<group>"; };
+		30E9AB972292EA15002BD3A1 /* Person+AAAA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+AAAA.h"; sourceTree = "<group>"; };
+		30E9AB982292EA15002BD3A1 /* Person+AAAA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+AAAA.m"; sourceTree = "<group>"; };
+		30E9AB9A2292EA2D002BD3A1 /* Person+ppp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+ppp.h"; sourceTree = "<group>"; };
+		30FA44F922937BD800ACAC94 /* help_GLKTextureLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = help_GLKTextureLoader.h; sourceTree = "<group>"; };
+		30FA451D2294384000ACAC94 /* TESTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TESTViewController.h; sourceTree = "<group>"; };
+		30FA451E2294384000ACAC94 /* TESTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TESTViewController.m; sourceTree = "<group>"; };
+		30FA452022943C5600ACAC94 /* TESTView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TESTView.h; sourceTree = "<group>"; };
+		30FA452122943C5600ACAC94 /* TESTView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TESTView.m; sourceTree = "<group>"; };
+		30FA45242295954000ACAC94 /* Shader1Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader1Controller.h; sourceTree = "<group>"; };
+		30FA45252295954000ACAC94 /* Shader1Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Shader1Controller.m; sourceTree = "<group>"; };
+		30FA45272295954D00ACAC94 /* ShaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderView.h; sourceTree = "<group>"; };
+		30FA45282295954D00ACAC94 /* ShaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShaderView.m; sourceTree = "<group>"; };
+		30FA452A2295972100ACAC94 /* help_CAEAGLLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = help_CAEAGLLayer.h; sourceTree = "<group>"; };
 		C46854FF1DC1C8AB003C4AD7 /* OPenGLES-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OPenGLES-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46855031DC1C8AB003C4AD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C46855051DC1C8AB003C4AD7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -192,8 +214,45 @@
 			children = (
 				304BDDB2228DB72600E06B45 /* help_glkViewController.h */,
 				30A969B622902FDE0071048A /* help_GLKBaseEffect.h */,
+				30FA44F922937BD800ACAC94 /* help_GLKTextureLoader.h */,
 			);
 			path = glk;
+			sourceTree = "<group>";
+		};
+		30E9AB922292E807002BD3A1 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				30E9AB932292E812002BD3A1 /* Person.h */,
+				30E9AB942292E812002BD3A1 /* Person.m */,
+				30E9AB962292E81F002BD3A1 /* Person+pp.h */,
+				30E9AB972292EA15002BD3A1 /* Person+AAAA.h */,
+				30E9AB982292EA15002BD3A1 /* Person+AAAA.m */,
+				30E9AB9A2292EA2D002BD3A1 /* Person+ppp.h */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		30FA451C229437CD00ACAC94 /* TTT */ = {
+			isa = PBXGroup;
+			children = (
+				30FA451D2294384000ACAC94 /* TESTViewController.h */,
+				30FA451E2294384000ACAC94 /* TESTViewController.m */,
+				30FA452022943C5600ACAC94 /* TESTView.h */,
+				30FA452122943C5600ACAC94 /* TESTView.m */,
+			);
+			path = TTT;
+			sourceTree = "<group>";
+		};
+		30FA45232295952700ACAC94 /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				30FA45242295954000ACAC94 /* Shader1Controller.h */,
+				30FA45252295954000ACAC94 /* Shader1Controller.m */,
+				30FA45272295954D00ACAC94 /* ShaderView.h */,
+				30FA45282295954D00ACAC94 /* ShaderView.m */,
+				30FA452A2295972100ACAC94 /* help_CAEAGLLayer.h */,
+			);
+			path = Shader;
 			sourceTree = "<group>";
 		};
 		C46854F61DC1C8AB003C4AD7 = {
@@ -239,12 +298,15 @@
 		C46855191DC1CA01003C4AD7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				30FA451C229437CD00ACAC94 /* TTT */,
+				30E9AB922292E807002BD3A1 /* test */,
 				305390CC228C58DD00312F73 /* help */,
 				305390B0228C58DD00312F73 /* AGLKit */,
 				C468551B1DC1CA01003C4AD7 /* MainController */,
 				C468551A1DC1CA01003C4AD7 /* Section1 */,
 				305390EF228C650400312F73 /* Section2 */,
 				305390EE228C64C300312F73 /* Section4 */,
+				30FA45232295952700ACAC94 /* Shader */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -353,12 +415,17 @@
 			files = (
 				305390E5228C58DD00312F73 /* AGLKFilters.m in Sources */,
 				305390A9228C550800312F73 /* Demo2ViewController.m in Sources */,
+				30E9AB952292E812002BD3A1 /* Person.m in Sources */,
 				305390DD228C58DD00312F73 /* AGLKCollision.m in Sources */,
 				305390DA228C58DD00312F73 /* AGLKVertexAttribArrayBuffer.m in Sources */,
+				30FA45292295954D00ACAC94 /* ShaderView.m in Sources */,
 				305390E4228C58DD00312F73 /* AGLKSkyboxEffect.m in Sources */,
 				305390F2228C650400312F73 /* Section2Demo1Controller.m in Sources */,
 				305390D6228C58DD00312F73 /* AGLKTextureTransformBaseEffect.m in Sources */,
 				C468551E1DC1CA01003C4AD7 /* ViewController.m in Sources */,
+				30E9AB992292EA15002BD3A1 /* Person+AAAA.m in Sources */,
+				30FA45262295954000ACAC94 /* Shader1Controller.m in Sources */,
+				30FA451F2294384000ACAC94 /* TESTViewController.m in Sources */,
 				305390DC228C58DD00312F73 /* AGLKTextureLoader.m in Sources */,
 				C46855241DC1CAA2003C4AD7 /* Demo1ViewController.m in Sources */,
 				305390D7228C58DD00312F73 /* AGLKContext.m in Sources */,
@@ -367,6 +434,7 @@
 				305390D9228C58DD00312F73 /* AGLKViewController.m in Sources */,
 				305390D5228C58DD00312F73 /* AGLKView.m in Sources */,
 				305390D8228C58DD00312F73 /* AGLKFrustum.m in Sources */,
+				30FA452222943C5600ACAC94 /* TESTView.m in Sources */,
 				C46855071DC1C8AB003C4AD7 /* AppDelegate.m in Sources */,
 				305390F5228C653100312F73 /* Section4Demo1Controller.m in Sources */,
 				C46855041DC1C8AB003C4AD7 /* main.m in Sources */,

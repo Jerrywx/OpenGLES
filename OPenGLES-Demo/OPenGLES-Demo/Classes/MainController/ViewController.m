@@ -12,6 +12,8 @@
 #import "Demo3ViewController.h"
 #import "Section2Demo1Controller.h"
 #import "Section4Demo1Controller.h"
+#import "TESTViewController.h"
+#import "Shader1Controller.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -27,13 +29,13 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	self.titles = @[@"Section1",
+	self.titles = @[@"Section1",					// 0
 					@"Section1-Demo1",
 					@"Section1-Demo2",
 					@"Section1-Demo3",
 					@"Section2-Demo1",
 					@"Section2-Demo2",
-					@"Section3",];
+					@"Shader1Controller",];
 	
 	/// 初始化界面
 	[self setupView];
@@ -51,6 +53,8 @@
 															   style:UITableViewStyleGrouped];
 		tableView.delegate 		= self;
 		tableView.dataSource 	= self;
+		tableView.estimatedSectionHeaderHeight = 0;
+		
 		[tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 		[self.view addSubview:tableView];
 		tableView;
@@ -85,7 +89,8 @@
 	
 	switch (indexPath.row) {
 		case 0: {
-			Demo1ViewController *demoVC = [[Demo1ViewController alloc] init];
+			TESTViewController *demoVC = [[TESTViewController alloc] init];
+//			Demo1ViewController *demoVC = [[Demo1ViewController alloc] init];
 			[self.navigationController pushViewController:demoVC animated:YES];
 		}
 			break;
@@ -112,11 +117,20 @@
 			[self.navigationController pushViewController:demoVC animated:YES];
 		}
 			break;
-//
+
+		case 6: {
+			Shader1Controller *shaderVC = [Shader1Controller new];
+			[self.navigationController pushViewController:shaderVC animated:YES];
+		}
 			
 		default:
 			break;
 	}
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	return 0.1;
+}
+
 
 @end
